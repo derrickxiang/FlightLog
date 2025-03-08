@@ -1,3 +1,4 @@
+using API.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -18,11 +19,13 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(
         builder =>
         {
-            builder.WithOrigins("http://localhost:3000")
+            builder.WithOrigins("http://localhost:3000", "https://localhost:3000")
                 .AllowAnyMethod()
                 .AllowAnyHeader();
         });
 });
+
+builder.Services.AddAutoMapper(typeof(MyProfiles).Assembly);
 
 var app = builder.Build();
 

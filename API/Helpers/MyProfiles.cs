@@ -9,7 +9,7 @@ namespace API.Helpers
 {
     public class MyProfiles : Profile
     {
-        protected MyProfiles()
+        public MyProfiles()
         {
             CreateMap<Flight, Flight>();
         }

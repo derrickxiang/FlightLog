@@ -23,13 +23,24 @@ function App() {
       setFlight(selectedFlight);
       setEditMode(true);
     }
+
     
   }
 
   const handleSubmitForm = (flight: Flight) => {
+    
+    console.log(flight)
     if (flight.id) {
       setFlight(flight);
       setEditMode(true);
+
+
+    axios.put(`http://localhost:5000/api/flight/`, {flight })
+    .then(() => fetchFlights());
+    }
+    else {
+      axios.post(`http://localhost:5000/api/flight/`, {...flight })
+      .then(() => fetchFlights());
     }
 
     console.log('Form submitted')
@@ -37,6 +48,7 @@ function App() {
 
   const handleFormClose = () => {
     setEditMode(false);
+    setFlight(undefined);
   }
 
   const handleOpenForm = () => {

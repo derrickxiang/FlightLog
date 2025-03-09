@@ -36,7 +36,7 @@ export default function FlightForm({
     return (
         <Paper sx={{ borderRadius: 3, padding: 3 }}>
             <Typography variant="h5" color='primary' gutterBottom>
-                Add Flight
+           { flight && flight.id ? 'Edit Flight' : 'Add Flight'} 
             </Typography>
             <Box component="form" 
                 autoComplete="off"

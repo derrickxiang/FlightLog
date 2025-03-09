@@ -28,7 +28,9 @@ export default function FlightDashboard({
 
     return (
         <Grid2 container spacing={3}>
-            <Grid2 size={8}>
+            <Grid2 size={8}
+            sx={{top: 112}}
+            >
                 <FlightList
                     flights={flights}
                     selectFlight={selectFlight}

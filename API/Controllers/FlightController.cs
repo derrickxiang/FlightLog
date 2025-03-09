@@ -48,7 +48,7 @@ namespace API.Controllers
             return CreatedAtAction("GetFlight", new { id = flight.Id }, flight);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task<IActionResult> UpdateFlight(Flight flight)
         {
             var existFlight = await _context.Flights.FindAsync(flight.Id);

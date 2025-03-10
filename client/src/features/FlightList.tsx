@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Card, CardActions, CardContent, CardHeader, Chip, Divider, Typography } from '@mui/material';
+import { Avatar, Box, Button, Card, CardActions, CardContent, CardHeader, Divider, Typography } from '@mui/material';
 
 type Props = {
     flights: Flight[];

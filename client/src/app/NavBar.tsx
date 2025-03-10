@@ -1,6 +1,5 @@
-import { Group, ManOutlined, } from '@mui/icons-material'
+import { Group, } from '@mui/icons-material'
 import { Box, AppBar, Toolbar, Typography, Button, Container, MenuItem, } from '@mui/material'
-import React from 'react'
 
 type Props = {
     editMode: boolean;

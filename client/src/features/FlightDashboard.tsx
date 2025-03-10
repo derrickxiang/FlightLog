@@ -1,8 +1,7 @@
-import { Grid2, List, ListItem, ListItemText } from '@mui/material'
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { Box, Grid2 } from '@mui/material'
 import FlightForm from './FlightForm';
 import FlightList from './FlightList';
+import LoginForm from './LoginForm';
 
 type Props = {
     flights: Flight[];
@@ -22,7 +21,7 @@ export default function FlightDashboard({
     deleteFlight,
     flight,
     editMode,
-    closeForm, openForm, submitForm
+    closeForm, submitForm
 }: Props) {
 
 
@@ -40,11 +39,12 @@ export default function FlightDashboard({
             <Grid2
                 size={4}
                 sx={{
-                    position: 'sticky',
+                    //position: 'sticky',
                     top: 112,
                     alignSelf: 'flex-start'
                 }}
             >
+                <Box gap={2}>
                 {editMode && (
                     <FlightForm
                         closeForm={closeForm}
@@ -52,7 +52,9 @@ export default function FlightDashboard({
                         submitForm={submitForm}
                     />
                 )
-            }
+                    }
+                    <LoginForm />
+                </Box>
             </Grid2>
         </Grid2>
     )

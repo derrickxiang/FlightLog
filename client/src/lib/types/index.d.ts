@@ -9,3 +9,8 @@ type Flight = {
     createdAt?: string;
     isDeleted?: boolean = false;
 }
+
+type LoginCres = {
+    email: string;
+    password: string;
+}

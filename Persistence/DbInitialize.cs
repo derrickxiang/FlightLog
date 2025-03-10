@@ -1,16 +1,30 @@
 using System;
 using Domain;
+using Microsoft.AspNetCore.Identity;
 
 namespace Persistence;
 
 public class DbInitialize
 {
-    public static async Task SeedData(AppDbContext context)
+    public static async Task SeedData(AppDbContext context,
+        UserManager<User> userManager
+    )
     {
-        if (context.Flights.Any())
+        if (!userManager.Users.Any())
         {
-            return;
+            var user = new User
+            {
+                UserName = "admin@test.com",
+                Email = "admin@test.com"
+            };
+
+            await userManager.CreateAsync(user, "Secret123$");
         }
+
+        if (context.Flights.Any())
+            {
+                return;
+            }
 
         var flights = new List<Flight>
         {
